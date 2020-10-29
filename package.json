@@ -1,0 +1,19 @@
+{
+  "name": "qiankun-tosn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm-run-all --serial install:*",
+    "install:main": "cd main && cnpm i",
+    "install:sub-vue2": "cd sub-vue2 && cnpm i",
+    "install:sub-vue3": "cd sub-vue3 && cnpm i",
+    "serve": "npm-run-all --parallel serve:*",
+    "serve:main": "cd main && npm run serve",
+    "serve:sub-vue2": "cd sub-vue2 && npm run serve",
+    "serve:sub-vue3": "cd sub-vue3 && npm run serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tosn",
+  "license": "ISC"
+}
