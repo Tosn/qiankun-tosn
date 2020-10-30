@@ -1,5 +1,5 @@
 // 注册及导出微服务
-import { registerMicroApps, initGlobalState, start, setDefaultMountApp } from 'qiankun'
+import { registerMicroApps, start, setDefaultMountApp } from 'qiankun'
 
 const microApps = [
   {
@@ -23,19 +23,18 @@ const apps = microApps.map(item => {
     }
   }
 })
-console.log(apps)
 registerMicroApps(apps)
-const { onGlobalStateChange, setGlobalState } = initGlobalState({
-  user: 'qiankun',
-});
-// value 当前 prev 之前的值
-onGlobalStateChange((value, prev) => {
-  console.log('[onGlobalStateChange - master]:', value, prev)
-})
+// const { onGlobalStateChange, setGlobalState } = initGlobalState({
+//   user: 'qiankun',
+// });
+// // value 当前 prev 之前的值
+// onGlobalStateChange((value, prev) => {
+//   console.log('[onGlobalStateChange - master]:', value, prev)
+// })
 
-setGlobalState({
-  token: ''
-})
+// setGlobalState({
+//   token: ''
+// })
 
 setDefaultMountApp('/micro/sub-vue2')
 start()

@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import routes from './router'
 import store from './store'
+import './styles/index.scss'
 import './public-path'
 
 let router = null
@@ -10,7 +11,6 @@ let instance = null
 
 function render (props = {}) {
   const { container, routerBase } = props
-  console.log(props)
   router = createRouter({
     history: createWebHistory(window.__POWERED_BY_QIANKUN__ ? routerBase : process.env.BASE_URL),
     routes
@@ -36,20 +36,20 @@ function storeTest (props) {
   props.onGlobalStateChange &&
     props.onGlobalStateChange(
       (value, prev) => {
-        store.commit('SET_STATE', {
-          key: 'app',
-          value
-        })
+        // store.commit('SET_STATE', {
+        //   key: 'app',
+        //   value
+        // })
         console.log(`[onGlobalStateChange - ${props.name}]:`, value, prev)
       },
       true
     )
-  props.setGlobalState &&
-    props.setGlobalState({
-      user: {
-        name: props.name
-      }
-    })
+  // props.setGlobalState &&
+  //   props.setGlobalState({
+  //     user: {
+  //       name: props.name
+  //     }
+  //   })
 }
 
 export async function mount (props) {

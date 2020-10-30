@@ -4,6 +4,7 @@ import App from './App.vue'
 import routes from './router'
 import store from './store'
 import VueRouter from 'vue-router'
+import './styles/index.scss'
 
 Vue.config.productionTip = false
 
@@ -35,20 +36,16 @@ function storeTest(props) {
   props.onGlobalStateChange &&
     props.onGlobalStateChange(
       (value, prev) => {
-        store.commit('SET_STATE', {
-          key: 'app',
-          value
-        })
         console.log(`[onGlobalStateChange - ${props.name}]:`, value, prev)
       },
       true
     );
-  props.setGlobalState &&
-    props.setGlobalState({
-      user: {
-        name: props.name
-      }
-    })
+  // props.setGlobalState &&
+  //   props.setGlobalState({
+  //     user: {
+  //       name: props.name
+  //     }
+  //   })
 }
 
 export async function bootstrap() {
@@ -56,7 +53,6 @@ export async function bootstrap() {
 }
 
 export async function mount(props) {
-  console.log('[vue] props from main framework', props)
   storeTest(props)
   render(props)
   Vue.prototype.$onGlobalStateChange = props.onGlobalStateChange
@@ -69,3 +65,9 @@ export async function unmount() {
   instance = null
   router = null
 }
+
+const isQianKun = () => {
+  return window.__POWERED_BY_QIANKUN__
+}
+
+Vue.prototype.$isQianKun = isQianKun()
