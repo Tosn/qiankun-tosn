@@ -12,7 +12,7 @@
 export default {
   methods: {
     toVue3 () {
-      history.pushState(null, 'sub-vue3', '/sub-vue3')
+      history.pushState(null, 'sub-vue3', '/micro/sub-vue3')
     }
   }
 }

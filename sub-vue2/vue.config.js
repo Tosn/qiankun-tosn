@@ -1,7 +1,9 @@
 const { name } = require('../package.json')
 module.exports = {
   lintOnSave: false,
-  publicPath: '/subapp/sub-vue2',
+  // transpileDependencies: ['common'],
+  // chainWebpack: config => config.resolve.symlinks(false),
+  publicPath: '/micro/subapp/sub-vue2',
   devServer: {
     port: 8887,
     headers: {

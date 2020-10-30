@@ -15,5 +15,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tosn",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "common": "file:common"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
 }

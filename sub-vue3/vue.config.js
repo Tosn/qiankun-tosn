@@ -1,7 +1,8 @@
 const { name } = require('../package.json')
 module.exports = {
   lintOnSave: false,
-  publicPath: '/subapp/sub-vue3',
+  // transpileDependencies: ['common'],
+  publicPath: '/micro/subapp/sub-vue3',
   devServer: {
     port: 8888,
     headers: {

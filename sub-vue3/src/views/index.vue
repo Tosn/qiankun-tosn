@@ -1,17 +1,19 @@
 <template>
   <div>
-
+    {{message}}
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   setup () {
-    
+    const message = ref('This is a vue3 Page')
 
-    return {}
+    return {
+      message
+    }
   }
 })
 </script>
